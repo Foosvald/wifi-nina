@@ -99,7 +99,7 @@ impl RecvParam for u8 {
     where
         S: embedded_hal::spi::FullDuplex<u8>,
     {
-        assert_eq!(1, len);
+        // assert_eq!(1, len);
         *self = spi.recv_exchange()?;
         Ok(())
     }

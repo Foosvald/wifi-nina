@@ -75,7 +75,8 @@ where
         S: embedded_hal::spi::FullDuplex<u8>,
     {
         let (a,) = self;
-        assert_eq!(1, spi.recv_exchange()?);
+        // assert_eq!(1, spi.recv_exchange()?);
+        spi.recv_exchange()?;
         log::trace!("param 0");
         a.recv_length_delimited(spi, long)?;
         log::trace!("end");
