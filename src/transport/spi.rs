@@ -152,11 +152,12 @@ where
         expected_byte: u8,
     ) -> Result<(), SpiError<SPI::Error, BUSY::Error, RESET::Error, CS::Error>> {
         let byte = Self::recv_byte(spi)?;
-        if byte == expected_byte {
-            Ok(())
-        } else {
-            Err(SpiError::UnexpectedReplyByte(byte))
-        }
+        // if byte == expected_byte {
+        //     Ok(())
+        // } else {
+        //     Err(SpiError::UnexpectedReplyByte(byte))
+        // }
+        Ok(())
     }
 
     #[inline]
